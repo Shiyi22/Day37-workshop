@@ -8,6 +8,7 @@ set DO_STORAGE_KEY=
 set DO_STORAGE_SECRETKEY=
 set DO_STORAGE_ENDPOINT=sgp1.digitaloceanspaces.com
 set DO_STORAGE_ENDPOINT_REGION=sgp1
+set DO_STORAGE_BUCKETNAME=ibfbatch2csf-shiyi
 ```
 
 ```
