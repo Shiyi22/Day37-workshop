@@ -1,0 +1,9 @@
+<div *ngIf="count > 0; else noImage">
+    <div>
+        <button mat-raised-button *ngFor="let postId of range(count)" type="button" (click)="getImage(postId)">{{postId}}</button>
+    </div>
+</div>
+
+<ng-template #noImage>
+    Your SQL database is empty
+</ng-template>

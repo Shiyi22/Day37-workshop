@@ -1,0 +1,17 @@
+<mat-card>
+    <!-- https://css-tricks.com/snippets/css/a-guide-to-flexbox/ -->
+    <mat-card-content fxLayout="column" fxLayoutAlign="center">
+        <div gdColumn="repeat(3, 48px)" gdGap="1rem">
+            <!-- <webcam [width]="width" [height]="height" [trigger]="trigger" (imageCapture)="snapshot($event)"></webcam> -->
+            <webcam [width]="width" [height]="height" [trigger]="trigger"></webcam>
+        </div>
+
+        <div>
+            <button mat-raised-button color="primary" type="button" (click)="snap()">Snap</button>
+        </div>
+
+        <div *ngFor="let p of pics">
+            <img [src]="p" width="100"/>
+        </div>
+    </mat-card-content>
+</mat-card>

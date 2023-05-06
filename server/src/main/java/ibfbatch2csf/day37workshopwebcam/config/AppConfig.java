@@ -13,16 +13,16 @@ import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 @Configuration
 public class AppConfig {
 
-    @Value("${DO_STORAGE_KEY}")
+    @Value("${do.storage.key}")
     private String accessKey; 
 
-    @Value("${DO_STORAGE_SECRETKEY}")
+    @Value("${do.storage.secretkey}")
     private String secretKey; 
 
-    @Value("${DO_STORAGE_ENDPOINT}")
+    @Value("${do.storage.endpoint}")
     private String endPoint; 
 
-    @Value("${DO_STORAGE_REGION}") // follow RHS of app.properties 
+    @Value("${do.storage.endpoint.region}") // follow RHS of app.properties 
     private String endPointRegion;
 
     @Bean

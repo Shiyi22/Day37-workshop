@@ -22,7 +22,8 @@ public class S3Service {
     @Autowired
     private AmazonS3 s3Client; 
 
-    @Value("${DO_STORAGE_BUCKETNAME}")
+    // @Value("${DO_STORAGE_BUCKETNAME}")
+    @Value("do.storage.bucketname")
     private String bucketName; 
 
     public String upload(MultipartFile file) throws IOException {
@@ -31,6 +32,7 @@ public class S3Service {
         userData.put("name", "Kenneth"); 
         userData.put("uploadDateTime", LocalDateTime.now().toString());
         userData.put("originalFilename", file.getOriginalFilename());  
+        // KENNETH MADE SOME CHANGES HERE 
 
         // create objectMetadata for put request 
         ObjectMetadata metadata = new ObjectMetadata(); 
@@ -48,10 +50,12 @@ public class S3Service {
             if (count == 1) {
                 filenameExt = tk.nextToken(); 
                 break; 
-            } else {
+            } else { // should increment 
                 filenameExt = tk.nextToken(); 
+                count++; 
             }
         }
+        // image captured is in .blob when it is sent via httpclient -> convert to png 
         if (filenameExt.equals("blob"))
             filenameExt = filenameExt + ".png"; // force upload to be png @ angular side 
         
